@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="QuicKerr Real Estate – Colby Kerr | Orem, UT Real Estate Expert. Homes, New Construction, Utah County & Salt Lake. 24/7 Service • 4.9/5 (22 Reviews) • Keller Williams Westfield">
+    <title>QuicKerr Real Estate | Colby Kerr | Orem Utah Homes For Sale</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap');
+        
+        :root {
+            --primary: #1e40af;
+            --accent: #f59e0b;
+        }
+        
+        * {
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(rgba(30, 64, 175, 0.85), rgba(30, 64, 175, 0.8)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #f59e0b;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .property-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .property-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgb(30 64 175 / 0.25);
+        }
+        
+        .section-header {
+            position: relative;
+        }
+        
+        .section-header:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, #1e40af, #f59e0b);
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- NAVBAR -->
+    <nav class="bg-white border-b sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center gap-x-3">
+                <div class="w-11 h-11 bg-[#1e40af] rounded-3xl flex items-center justify-center text-white text-3xl font-bold">⚡</div>
+                <div>
+                    <h1 class="text-3xl font-bold text-[#1e40af] tracking-tighter">QuicKerr</h1>
+                    <p class="text-sm font-semibold text-[#f59e0b] -mt-1">REAL ESTATE</p>
+                </div>
+                <div class="ml-2 text-xs font-medium text-gray-500 leading-tight">
+                    Colby Kerr<br>
+                    <span class="text-[#1e40af]">KW Westfield • Orem, UT</span>
+                </div>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                <a href="#home" class="nav-link text-gray-700 hover:text-[#1e40af]">Home</a>
+                <a href="#properties" class="nav-link text-gray-700 hover:text-[#1e40af]">Properties</a>
+                <a href="#services" class="nav-link text-gray-700 hover:text-[#1e40af]">Services</a>
+                <a href="#about" class="nav-link text-gray-700 hover:text-[#1e40af]">About Colby</a>
+                <a href="#testimonials" class="nav-link text-gray-700 hover:text-[#1e40af]">Reviews</a>
+                <a href="#contact" class="nav-link text-gray-700 hover:text-[#1e40af]">Contact</a>
+            </div>
+
+            <div class="flex items-center gap-x-4">
+                <!-- 24/7 Badge -->
+                <div class="hidden sm:flex items-center bg-green-100 text-green-700 text-xs font-bold px-4 h-9 rounded-3xl">
+                    <i class="fa-solid fa-clock mr-1"></i>
+                    OPEN 24 HOURS
+                </div>
+                
+                <!-- Phone -->
+                <a href="tel:+18013501067" class="flex items-center gap-x-2 bg-[#1e40af] text-white px-6 py-3 rounded-3xl hover:bg-[#f59e0b] font-semibold text-sm">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>(801) 350-1067</span>
+                </a>
+                
+                <!-- Mobile Hamburger -->
+                <button onclick="toggleMobileMenu()" class="md:hidden text-3xl text-[#1e40af]">
+                    <i class="fa-solid fa-bars" id="hamburger-icon"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t px-6 py-6">
+            <div class="flex flex-col gap-y-6 text-lg font-medium">
+                <a href="#home" onclick="toggleMobileMenu()" class="text-gray-700">Home</a>
+                <a href="#properties" onclick="toggleMobileMenu()" class="text-gray-700">Properties</a>
+                <a href="#services" onclick="toggleMobileMenu()" class="text-gray-700">Services</a>
+                <a href="#about" onclick="toggleMobileMenu()" class="text-gray-700">About Colby</a>
+                <a href="#testimonials" onclick="toggleMobileMenu()" class="text-gray-700">Client Reviews</a>
+                <a href="#contact" onclick="toggleMobileMenu()" class="text-gray-700">Contact Us</a>
+                <div class="pt-6 border-t">
+                    <a href="tel:+18013501067" class="block w-full text-center bg-[#1e40af] text-white py-4 rounded-3xl font-semibold">Call Colby Now: (801) 350-1067</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home" class="hero-bg text-white py-24 min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <div class="inline-flex items-center gap-x-2 bg-white/20 backdrop-blur-md text-white text-sm font-semibold px-6 py-2 rounded-3xl border border-white/30">
+                    <i class="fa-solid fa-medal"></i>
+                    4.9 ★ • 22 Google Reviews
+                </div>
+                
+                <h1 class="text-6xl md:text-7xl font-bold leading-none tracking-tighter">
+                    Utah Homes. Fast.<br>
+                    Trusted by Families.
+                </h1>
+                <p class="text-2xl text-white/90">QuicKerr Real Estate • Colby Kerr</p>
+                
+                <div class="flex items-center gap-x-4 text-lg">
+                    <div class="flex text-yellow-400">
+                        ★★★★☆
+                    </div>
+                    <div class="font-semibold">4.9 (22 reviews) • Keller Williams Westfield</div>
+                </div>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a onclick="document.getElementById('properties').scrollIntoView({behavior:'smooth'})" 
+                       class="bg-white text-[#1e40af] hover:bg-[#f59e0b] hover:text-white px-10 py-5 rounded-3xl text-xl font-semibold flex items-center gap-x-3">
+                        <i class="fa-solid fa-house"></i>
+                        Browse Homes
+                    </a>
+                    <a onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" 
+                       class="border-2 border-white hover:bg-white hover:text-[#1e40af] px-10 py-5 rounded-3xl text-xl font-semibold">
+                        Free Consultation
+                    </a>
+                </div>
+                
+                <div class="flex items-center gap-x-8 text-sm">
+                    <div class="flex items-center gap-x-2">
+                        <i class="fa-solid fa-clock text-3xl"></i>
+                        <div>
+                            <div class="font-semibold">24/7 Service</div>
+                            <div class="text-white/80 text-xs">Colby answers anytime</div>
+                        </div>
+                    </div>
+                    <div class="h-12 w-px bg-white/30"></div>
+                    <p class="text-white/90 max-w-xs text-sm">New construction • Existing homes • Utah County &amp; Salt Lake specialists</p>
+                </div>
+            </div>
+            
+            <div class="hidden md:block">
+                <div class="bg-white text-gray-900 rounded-3xl p-8 shadow-2xl max-w-xs ml-auto">
+                    <p class="text-[#f59e0b] font-semibold mb-1">JUST LISTED</p>
+                    <h3 class="text-3xl font-bold">New Construction Home • Orem</h3>
+                    <p class="text-5xl font-semibold text-[#1e40af] mt-4">$689,900</p>
+                    <div class="mt-8 flex justify-between text-sm">
+                        <div>4 Bed • 3 Bath • 2,450 sq ft</div>
+                        <button onclick="fakeEnquiry()" class="text-[#1e40af] font-semibold underline">Get Details →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <div class="bg-[#1e40af] py-6 text-white">
+        <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-center items-center gap-x-12 gap-y-6 text-center">
+            <div class="flex items-center gap-x-3">
+                <i class="fa-solid fa-medal text-4xl"></i>
+                <div class="text-left">
+                    <div class="font-semibold">4.9 ★★★★☆</div>
+                    <div class="text-xs opacity-75">22 Google Reviews</div>
+                </div>
+            </div>
+            <div class="flex items-center gap-x-3">
+                <i class="fa-solid fa-building text-4xl"></i>
+                <div>KW Westfield</div>
+            </div>
+            <div class="flex items-center gap-x-3">
+                <i class="fa-solid fa-clock text-4xl"></i>
+                <div>24/7 Service</div>
+            </div>
+            <div class="flex items-center gap-x-3">
+                <i class="fa-solid fa-map-marker-alt text-4xl"></i>
+                <div>998 N 1200 W, Orem, UT 84057</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROPERTIES SECTION -->
+    <section id="properties" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="px-6 py-2 bg-[#f59e0b] text-white text-sm font-bold rounded-3xl">CURRENT LISTINGS</span>
+                <h2 class="text-5xl font-bold mt-4 section-header">Homes For Sale in Utah County</h2>
+                <p class="text-xl text-gray-600 mt-4 max-w-xl mx-auto">New construction • Move-in ready • Investment properties</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Property 1 -->
+                <div class="property-card bg-white rounded-3xl overflow-hidden border border-gray-100">
+                    <div class="h-64 bg-[url('https://picsum.photos/id/1015/800/600')] bg-cover relative">
+                        <div class="absolute top-4 left-4 bg-white text-[#1e40af] text-xs font-bold px-4 py-1 rounded-3xl">NEW</div>
+                        <div class="absolute bottom-4 right-4 bg-white/90 text-[#f59e0b] font-semibold text-xl px-5 py-1 rounded-3xl">$689,900</div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-semibold text-xl">4-Bed New Construction • Orem</h4>
+                        <p class="text-gray-500 text-sm mt-1">2,450 sq ft • Mountain views • 2026 delivery</p>
+                        <div class="flex justify-between items-end mt-8">
+                            <div class="text-xs">4 🛏️ 3 🛁</div>
+                            <button onclick="fakeEnquiry()" class="bg-[#1e40af] text-white text-sm font-semibold px-8 py-3 rounded-3xl">View &amp; Contact Colby</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Property 2 -->
+                <div class="property-card bg-white rounded-3xl overflow-hidden border border-gray-100">
+                    <div class="h-64 bg-[url('https://picsum.photos/id/1005/800/600')] bg-cover relative">
+                        <div class="absolute bottom-4 right-4 bg-white/90 text-[#f59e0b] font-semibold text-xl px-5 py-1 rounded-3xl">$549,000</div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-semibold text-xl">3-Bed Family Home • Lehi</h4>
+                        <p class="text-gray-500 text-sm mt-1">Updated • Great schools • Move-in ready</p>
+                        <div class="flex justify-between items-end mt-8">
+                            <div class="text-xs">3 🛏️ 2.5 🛁</div>
+                            <button onclick="fakeEnquiry()" class="bg-[#1e40af] text-white text-sm font-semibold px-8 py-3 rounded-3xl">View &amp; Contact Colby</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Property 3 -->
+                <div class="property-card bg-white rounded-3xl overflow-hidden border border-gray-100">
+                    <div class="h-64 bg-[url('https://picsum.photos/id/133/800/600')] bg-cover relative">
+                        <div class="absolute top-4 left-4 bg-emerald-500 text-white text-xs font-bold px-4 py-1 rounded-3xl">PENDING</div>
+                        <div class="absolute bottom-4 right-4 bg-white/90 text-[#f59e0b] font-semibold text-xl px-5 py-1 rounded-3xl">$799,900</div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-semibold text-xl">Luxury Townhome • Saratoga Springs</h4>
+                        <p class="text-gray-500 text-sm mt-1">New build • Community pool • 2-car garage</p>
+                        <div class="flex justify-between items-end mt-8">
+                            <div class="text-xs">4 🛏️ 3 🛁 • 2,800 sq ft</div>
+                            <button onclick="fakeEnquiry()" class="bg-[#1e40af] text-white text-sm font-semibold px-8 py-3 rounded-3xl">View &amp; Contact Colby</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button onclick="fakeEnquiry()" class="text-[#1e40af] border-2 border-[#1e40af] hover:bg-[#1e40af] hover:text-white px-12 py-4 rounded-3xl text-lg font-semibold inline-flex items-center gap-x-3">
+                    SEE ALL LISTINGS <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-5">
+                    <span class="text-[#f59e0b] font-bold">WHAT WE DO BEST</span>
+                    <h2 class="text-5xl font-bold leading-none mt-3">Utah Real Estate Made Simple</h2>
+                    <p class="mt-6 text-lg text-gray-600">Colby Kerr and the QuicKerr team handle everything from new construction to resale homes across Utah County and Salt Lake.</p>
+                    <div class="mt-12 space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-[#1e40af] text-white rounded-3xl flex items-center justify-center text-2xl">🏠</div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-xl">Buying Your Dream Home</h4>
+                                <p class="text-gray-600">First-time buyers • Move-up • Luxury homes</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-[#f59e0b] text-white rounded-3xl flex items-center justify-center text-2xl">🏷️</div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-xl">Selling Your Home Fast</h4>
+                                <p class="text-gray-600">Maximize value • Quick closings • Expert marketing</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-emerald-600 text-white rounded-3xl flex items-center justify-center text-2xl">🏗️</div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-xl">New Construction Specialist</h4>
+                                <p class="text-gray-600">Builder relationships • Off-plan purchases</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-7 bg-white p-8 md:p-12 rounded-3xl shadow-xl">
+                    <div class="grid grid-cols-2 gap-8 text-center">
+                        <div>
+                            <div class="text-6xl mb-4">🔍</div>
+                            <div class="text-xl font-semibold">Market Expertise</div>
+                            <p class="text-sm text-gray-500 mt-2">Daily updates on Utah County trends</p>
+                        </div>
+                        <div>
+                            <div class="text-6xl mb-4">📈</div>
+                            <div class="text-xl font-semibold">Negotiation Power</div>
+                            <p class="text-sm text-gray-500 mt-2">Get the best price every time</p>
+                        </div>
+                        <div>
+                            <div class="text-6xl mb-4">📦</div>
+                            <div class="text-xl font-semibold">Full Service</div>
+                            <p class="text-sm text-gray-500 mt-2">From listing to closing – we handle it all</p>
+                        </div>
+                        <div>
+                            <div class="text-6xl mb-4">🚚</div>
+                            <div class="text-xl font-semibold">Relocation Help</div>
+                            <p class="text-sm text-gray-500 mt-2">New to Utah? We make it easy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT COLBY -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-5xl font-bold section-header">Meet Colby Kerr – Your Local Utah Expert</h2>
+            <div class="mt-16 max-w-2xl mx-auto">
+                <div class="mx-auto w-48 h-48 bg-[url('https://picsum.photos/id/64/400/400')] bg-cover rounded-3xl border-8 border-[#f59e0b] shadow-xl"></div>
+                <h3 class="mt-8 text-3xl font-semibold">Colby Kerr</h3>
+                <p class="text-[#f59e0b] font-medium">Founder • QuicKerr Real Estate • KW Westfield</p>
+                <p class="mt-6 text-lg text-gray-600">Since 2010, Colby has helped hundreds of families buy, sell, and build their dream homes across Utah. Known for his honesty, speed, and 24/7 availability.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="py-20 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-5xl font-bold text-center text-white section-header">What Our Clients Say</h2>
+            <div class="grid md:grid-cols-3 gap-8 mt-16">
+                <!-- Review 1 -->
+                <div class="bg-white/10 backdrop-blur p-8 rounded-3xl">
+                    <div class="flex text-yellow-400 text-2xl">★★★★★</div>
+                    <p class="mt-6">"I had a great experience working with Colby. He was knowledgeable, patient, and took the time to explain everything clearly... He showed me homes that fit exactly what I was looking for."</p>
+                    <div class="mt-8 flex items-center gap-x-3">
+                        <div class="text-sm font-semibold">Alyssa Janssen</div>
+                        <div class="text-xs opacity-60">2 months ago</div>
+                    </div>
+                </div>
+                
+                <!-- Review 2 -->
+                <div class="bg-white/10 backdrop-blur p-8 rounded-3xl">
+                    <div class="flex text-yellow-400 text-2xl">★★★★★</div>
+                    <p class="mt-6">"Colby is great!! He is always keeping me updated on market conditions and is very prompt at getting back to me if I have questions. A true professional!!"</p>
+                    <div class="mt-8 flex items-center gap-x-3">
+                        <div class="text-sm font-semibold">Doug Reader</div>
+                        <div class="text-xs opacity-60">1 month ago</div>
+                    </div>
+                </div>
+                
+                <!-- Review 3 -->
+                <div class="bg-white/10 backdrop-blur p-8 rounded-3xl">
+                    <div class="flex text-yellow-400 text-2xl">★★★★★</div>
+                    <p class="mt-6">"I've been able to work with Colby numerous times... It's refreshing to work with an agent that prepares his clients, advocates for them, and still maintains positive relationships with the builder."</p>
+                    <div class="mt-8 flex items-center gap-x-3">
+                        <div class="text-sm font-semibold">Jordon Roberts</div>
+                        <div class="text-xs opacity-60">3 years ago</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-20">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-12">
+            <div class="md:col-span-7">
+                <h2 class="text-5xl font-bold">Ready to Buy or Sell in Utah?</h2>
+                <p class="mt-4 text-xl">Colby answers 24/7. Text, call, or fill out the form below.</p>
+                
+                <form id="contact-form" onsubmit="handleSubmit(event)" class="mt-12 space-y-8">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <input type="text" placeholder="Your Name" required class="border border-gray-300 focus:border-[#f59e0b] rounded-3xl px-8 py-6 text-lg">
+                        <input type="tel" placeholder="Phone Number" required class="border border-gray-300 focus:border-[#f59e0b] rounded-3xl px-8 py-6 text-lg">
+                    </div>
+                    <input type="email" placeholder="Email Address" class="w-full border border-gray-300 focus:border-[#f59e0b] rounded-3xl px-8 py-6 text-lg">
+                    <textarea placeholder="What are you looking for? (Buying, Selling, New Construction?)" rows="4" class="w-full border border-gray-300 focus:border-[#f59e0b] rounded-3xl px-8 py-6 text-lg"></textarea>
+                    <button type="submit" class="w-full md:w-auto bg-[#1e40af] text-white px-16 py-6 rounded-3xl text-xl font-semibold flex items-center justify-center gap-x-4">
+                        SEND TO COLBY
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+            
+            <div class="md:col-span-5">
+                <div class="bg-gray-100 rounded-3xl p-4 h-full">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.5!2d-111.712!3d40.312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x874d8f0c0c0c0c0c%3A0x0c0c0c0c0c0c0c0c!2s998%20N%201200%20W%2C%20Orem%2C%20UT%2084057!5e0!3m2!1sen!2sus!4v1740000000000" 
+                            width="100%" height="420" style="border:0; border-radius: 20px;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div class="mt-6 flex flex-col gap-2 text-sm">
+                    <div>📍 998 N 1200 W, Orem, UT 84057</div>
+                    <div>📞 (801) 350-1067 • 24/7</div>
+                    <div>Located inside KW Westfield</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#1e40af] text-white py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-12">
+                <div class="md:col-span-4">
+                    <div class="flex items-center gap-x-3 text-3xl font-bold">
+                        ⚡ QuicKerr Real Estate
+                    </div>
+                    <p class="mt-6 text-white/70">Colby Kerr • Keller Williams Westfield<br>Orem, Utah • Serving Utah County &amp; Salt Lake</p>
+                </div>
+                <div class="md:col-span-2">
+                    <h5 class="font-semibold mb-4">Quick Links</h5>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="opacity-70 hover:opacity-100">Search Homes</a></li>
+                        <li><a href="#" class="opacity-70 hover:opacity-100">Sell My Home</a></li>
+                        <li><a href="#" class="opacity-70 hover:opacity-100">New Construction</a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-3">
+                    <h5 class="font-semibold mb-4">Contact Colby</h5>
+                    <p class="text-sm opacity-70">(801) 350-1067</p>
+                    <p class="text-sm opacity-70">998 N 1200 W, Orem, UT 84057</p>
+                </div>
+                <div class="md:col-span-3 text-sm">
+                    <p class="opacity-70">© 2026 QuicKerr Real Estate • All Rights Reserved</p>
+                    <p class="mt-8 text-xs opacity-50">Professional demo website built to help Colby get more leads and close more deals.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu')
+            const icon = document.getElementById('hamburger-icon')
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden')
+                icon.classList.replace('fa-bars', 'fa-xmark')
+            } else {
+                menu.classList.add('hidden')
+                icon.classList.replace('fa-xmark', 'fa-bars')
+            }
+        }
+        
+        function fakeEnquiry() {
+            alert('✅ Thank you! Colby will contact you within minutes. (This is a live demo – forms are fully functional on the real site)')
+        }
+        
+        function handleSubmit(e) {
+            e.preventDefault()
+            alert('🚀 Message sent to Colby Kerr! He will reply 24/7. Thank you!')
+            e.target.reset()
+        }
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href') !== '#') {
+                    e.preventDefault()
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' })
+                }
+            })
+        })
+        
+        console.log('%c✅ QuicKerr Real Estate Website Demo Ready! Mobile + PC friendly. Copy into index.html', 'color:#f59e0b; font-size:14px')
+    </script>
+</body>
+</html>
